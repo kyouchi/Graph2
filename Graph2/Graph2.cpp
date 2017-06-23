@@ -67,12 +67,11 @@ double Answer::printAnswer()
 
 	for (n = 1; n < limit; n++)
 	{
-		oddN = (2 * n - 1);
-
+		oddN = ((2 * n) - 1);
 		//pow(x1,x2) = x1をx2で累乗したものを戻り値とする。
-		dimentionless_heat += (1 / oddN) * exp(-pow(oddN, 2) * pow(pi, 2) * this->q.dimentionless_time) * sin(oddN * pi * this->q.dimentionless_distance);
+		dimentionless_heat += (1 / (double)oddN) * exp(-(pow(oddN, 2) * pow(pi, 2) * this->q.dimentionless_time)) * sin(oddN * pi * this->q.dimentionless_distance);
 	}
-	dimentionless_heat *= 4 / pi;
+	dimentionless_heat *= (4 / pi);
 	return dimentionless_heat;
 }
 
